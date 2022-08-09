@@ -8,6 +8,7 @@ export enum PathTimeZoneConversion {
 }
 
 export interface TimeZoneCalculatorOptions {
+  timeZone: string | undefined;
   getClientOffset: (date: Date) => number;
   tryGetCommonOffset: (date: Date, timeZone?: string) => number | undefined;
   tryGetAppointmentOffset: (
