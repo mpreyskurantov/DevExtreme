@@ -7,6 +7,11 @@ import {
 
 import DevExpress from 'devextreme/bundles/dx.all';
 import { UserDefinedElement } from 'devextreme/core/element';
+import { DataGridPredefinedToolbarItem } from 'devextreme/ui/data_grid';
+import { FileManagerPredefinedToolbarItem } from 'devextreme/ui/file_manager';
+import { GanttPredefinedToolbarItem } from 'devextreme/ui/gantt';
+import { HtmlEditorPredefinedToolbarItem } from 'devextreme/ui/html_editor';
+import { TreeListPredefinedToolbarItem } from 'devextreme/ui/tree_list';
 
 @Component({
     template: ''
@@ -19,10 +24,10 @@ export abstract class DxoDataGridToolbar extends NestedOption {
         this._setOption('disabled', value);
     }
 
-    get items(): Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | string | DevExpress.ui.dxFileManagerToolbarItem | DevExpress.ui.dxGanttToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem> {
+    get items(): Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | DataGridPredefinedToolbarItem | DevExpress.ui.dxFileManagerToolbarItem | FileManagerPredefinedToolbarItem | DevExpress.ui.dxGanttToolbarItem | GanttPredefinedToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | HtmlEditorPredefinedToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem | TreeListPredefinedToolbarItem> {
         return this._getOption('items');
     }
-    set items(value: Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | string | DevExpress.ui.dxFileManagerToolbarItem | DevExpress.ui.dxGanttToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem>) {
+    set items(value: Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | DataGridPredefinedToolbarItem | DevExpress.ui.dxFileManagerToolbarItem | FileManagerPredefinedToolbarItem | DevExpress.ui.dxGanttToolbarItem | GanttPredefinedToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | HtmlEditorPredefinedToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem | TreeListPredefinedToolbarItem>) {
         this._setOption('items', value);
     }
 
@@ -33,10 +38,10 @@ export abstract class DxoDataGridToolbar extends NestedOption {
         this._setOption('visible', value);
     }
 
-    get fileSelectionItems(): Array<DevExpress.ui.dxFileManagerToolbarItem | string> {
+    get fileSelectionItems(): Array<DevExpress.ui.dxFileManagerToolbarItem | FileManagerPredefinedToolbarItem> {
         return this._getOption('fileSelectionItems');
     }
-    set fileSelectionItems(value: Array<DevExpress.ui.dxFileManagerToolbarItem | string>) {
+    set fileSelectionItems(value: Array<DevExpress.ui.dxFileManagerToolbarItem | FileManagerPredefinedToolbarItem>) {
         this._setOption('fileSelectionItems', value);
     }
 
