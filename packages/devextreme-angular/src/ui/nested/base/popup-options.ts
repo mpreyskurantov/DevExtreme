@@ -10,7 +10,7 @@ import DevExpress from 'devextreme/bundles/dx.all';
 import { Position, PositionAlignment, ToolbarItemComponent, ToolbarItemLocation } from 'devextreme/common';
 import { UserDefinedElement } from 'devextreme/core/element';
 import { ContentReadyEvent, DisposingEvent, HiddenEvent, HidingEvent, InitializedEvent, OptionChangedEvent, ShowingEvent, ShownEvent, TitleRenderedEvent } from 'devextreme/ui/popover';
-import { ContentReadyEvent, DisposingEvent, HiddenEvent, HidingEvent, InitializedEvent, OptionChangedEvent, ResizeEndEvent, ResizeEvent, ResizeStartEvent, ShowingEvent, ShownEvent, TitleRenderedEvent, ToolbarLocation } from 'devextreme/ui/popup';
+import { ToolbarLocation } from 'devextreme/ui/popup';
 import { LocateInMenuMode, ShowTextMode } from 'devextreme/ui/toolbar';
 
 @Component({
@@ -185,87 +185,87 @@ export abstract class DxoPopupOptions extends NestedOption {
         this._setOption('minWidth', value);
     }
 
-    get onContentReady(): ((e: ContentReadyEvent) => void) {
+    get onContentReady(): Function {
         return this._getOption('onContentReady');
     }
-    set onContentReady(value: ((e: ContentReadyEvent) => void)) {
+    set onContentReady(value: Function) {
         this._setOption('onContentReady', value);
     }
 
-    get onDisposing(): ((e: DisposingEvent) => void) {
+    get onDisposing(): Function {
         return this._getOption('onDisposing');
     }
-    set onDisposing(value: ((e: DisposingEvent) => void)) {
+    set onDisposing(value: Function) {
         this._setOption('onDisposing', value);
     }
 
-    get onHidden(): ((e: HiddenEvent) => void) {
+    get onHidden(): Function {
         return this._getOption('onHidden');
     }
-    set onHidden(value: ((e: HiddenEvent) => void)) {
+    set onHidden(value: Function) {
         this._setOption('onHidden', value);
     }
 
-    get onHiding(): ((e: HidingEvent) => void) {
+    get onHiding(): Function {
         return this._getOption('onHiding');
     }
-    set onHiding(value: ((e: HidingEvent) => void)) {
+    set onHiding(value: Function) {
         this._setOption('onHiding', value);
     }
 
-    get onInitialized(): ((e: InitializedEvent) => void) {
+    get onInitialized(): Function {
         return this._getOption('onInitialized');
     }
-    set onInitialized(value: ((e: InitializedEvent) => void)) {
+    set onInitialized(value: Function) {
         this._setOption('onInitialized', value);
     }
 
-    get onOptionChanged(): ((e: OptionChangedEvent) => void) {
+    get onOptionChanged(): Function {
         return this._getOption('onOptionChanged');
     }
-    set onOptionChanged(value: ((e: OptionChangedEvent) => void)) {
+    set onOptionChanged(value: Function) {
         this._setOption('onOptionChanged', value);
     }
 
-    get onResize(): ((e: ResizeEvent) => void) {
+    get onResize(): Function {
         return this._getOption('onResize');
     }
-    set onResize(value: ((e: ResizeEvent) => void)) {
+    set onResize(value: Function) {
         this._setOption('onResize', value);
     }
 
-    get onResizeEnd(): ((e: ResizeEndEvent) => void) {
+    get onResizeEnd(): Function {
         return this._getOption('onResizeEnd');
     }
-    set onResizeEnd(value: ((e: ResizeEndEvent) => void)) {
+    set onResizeEnd(value: Function) {
         this._setOption('onResizeEnd', value);
     }
 
-    get onResizeStart(): ((e: ResizeStartEvent) => void) {
+    get onResizeStart(): Function {
         return this._getOption('onResizeStart');
     }
-    set onResizeStart(value: ((e: ResizeStartEvent) => void)) {
+    set onResizeStart(value: Function) {
         this._setOption('onResizeStart', value);
     }
 
-    get onShowing(): ((e: ShowingEvent) => void) {
+    get onShowing(): Function {
         return this._getOption('onShowing');
     }
-    set onShowing(value: ((e: ShowingEvent) => void)) {
+    set onShowing(value: Function) {
         this._setOption('onShowing', value);
     }
 
-    get onShown(): ((e: ShownEvent) => void) {
+    get onShown(): Function {
         return this._getOption('onShown');
     }
-    set onShown(value: ((e: ShownEvent) => void)) {
+    set onShown(value: Function) {
         this._setOption('onShown', value);
     }
 
-    get onTitleRendered(): ((e: TitleRenderedEvent) => void) {
+    get onTitleRendered(): Function {
         return this._getOption('onTitleRendered');
     }
-    set onTitleRendered(value: ((e: TitleRenderedEvent) => void)) {
+    set onTitleRendered(value: Function) {
         this._setOption('onTitleRendered', value);
     }
 
