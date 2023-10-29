@@ -387,7 +387,7 @@ type IButtonProps = React.PropsWithChildren<{
   hint?: string;
   icon?: string;
   name?: "add" | "cancel" | "delete" | "edit" | "save" | "undelete";
-  onClick?: ((e: { column: dxTreeListColumn, component: dxTreeList, element: any, event: event, model: any, row: dxTreeListRowObject }) => void);
+  onClick?: ((e: { column: dxTreeListColumn, component: dxTreeList, element: any, event: event, row: dxTreeListRowObject }) => void);
   template?: ((cellElement: any, cellInfo: { column: dxTreeListColumn, columnIndex: number, component: dxTreeList, data: Record<string, any>, key: any, row: dxTreeListRowObject, rowIndex: number, rowType: string }) => string | any) | template;
   text?: string;
   visible?: boolean | ((options: { column: dxTreeListColumn, component: dxTreeList, row: dxTreeListRowObject }) => boolean);

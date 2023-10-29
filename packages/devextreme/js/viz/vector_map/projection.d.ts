@@ -51,7 +51,7 @@ export const projection: {
      * @return object
      * @namespace DevExpress.viz.map.projection
      * @static
-     * @hidden
+     * @hidden //
      */
     get(name: VectorMapProjection | string): any;
 
