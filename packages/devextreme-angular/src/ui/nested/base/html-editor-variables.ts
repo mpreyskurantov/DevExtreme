@@ -5,17 +5,17 @@ import {
     Component,
 } from '@angular/core';
 
-import { Store } from 'devextreme/data';
-import DataSource, { Options as DataSourceOptions } from 'devextreme/data/data_source';
+import DataSource, { DataSourceOptions } from 'devextreme/data/data_source';
+import { Store } from 'devextreme/data/store';
 
 @Component({
     template: ''
 })
 export abstract class DxoHtmlEditorVariables extends NestedOption {
-    get dataSource(): DataSource | DataSourceOptions | Store | null | string | Array<string> {
+    get dataSource(): Store | DataSourceOptions | DataSource | null | string | Array<string> {
         return this._getOption('dataSource');
     }
-    set dataSource(value: DataSource | DataSourceOptions | Store | null | string | Array<string>) {
+    set dataSource(value: Store | DataSourceOptions | DataSource | null | string | Array<string>) {
         this._setOption('dataSource', value);
     }
 

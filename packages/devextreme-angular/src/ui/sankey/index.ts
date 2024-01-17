@@ -24,8 +24,8 @@ import {
 import { ExportFormat, HorizontalAlignment, VerticalAlignment, VerticalEdge } from 'devextreme/common';
 import { DashStyle, Font, HatchDirection, Palette, PaletteExtensionMode, TextOverflow, Theme, WordWrap } from 'devextreme/common/charts';
 import { UserDefinedElement } from 'devextreme/core/element';
-import { Store } from 'devextreme/data';
-import DataSource, { Options as DataSourceOptions } from 'devextreme/data/data_source';
+import DataSource, { DataSourceOptions } from 'devextreme/data/data_source';
+import { Store } from 'devextreme/data/store';
 import { Format } from 'devextreme/localization';
 import { DisposingEvent, DrawnEvent, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, LinkClickEvent, LinkHoverEvent, NodeClickEvent, NodeHoverEvent, OptionChangedEvent, SankeyColorMode } from 'devextreme/viz/sankey';
 
@@ -112,10 +112,10 @@ export class DxSankeyComponent extends DxComponent implements OnDestroy, OnChang
     
      */
     @Input()
-    get dataSource(): DataSource | DataSourceOptions | Store | null | string | Array<any> {
+    get dataSource(): Store | DataSourceOptions | DataSource | null | string | Array<any> {
         return this._getOption('dataSource');
     }
-    set dataSource(value: DataSource | DataSourceOptions | Store | null | string | Array<any>) {
+    set dataSource(value: Store | DataSourceOptions | DataSource | null | string | Array<any>) {
         this._setOption('dataSource', value);
     }
 
@@ -385,10 +385,10 @@ export class DxSankeyComponent extends DxComponent implements OnDestroy, OnChang
     
      */
     @Input()
-    get tooltip(): { arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined } {
+    get tooltip(): { arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: UserDefinedElement | string | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined } {
         return this._getOption('tooltip');
     }
-    set tooltip(value: { arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }) {
+    set tooltip(value: { arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: UserDefinedElement | string | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }) {
         this._setOption('tooltip', value);
     }
 
@@ -520,7 +520,7 @@ export class DxSankeyComponent extends DxComponent implements OnDestroy, OnChang
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     
      */
-    @Output() dataSourceChange: EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>;
+    @Output() dataSourceChange: EventEmitter<Store | DataSourceOptions | DataSource | null | string | Array<any>>;
 
     /**
     
@@ -667,7 +667,7 @@ export class DxSankeyComponent extends DxComponent implements OnDestroy, OnChang
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     
      */
-    @Output() tooltipChange: EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>;
+    @Output() tooltipChange: EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: DashStyle, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: UserDefinedElement | string | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>;
 
     /**
     

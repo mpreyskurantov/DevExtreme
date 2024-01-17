@@ -24,7 +24,7 @@ import {
 import { FieldChooserLayout, Mode, ScrollMode } from 'devextreme/common';
 import { ApplyChangesMode, HeaderFilterSearchConfig, StateStoreType } from 'devextreme/common/grids';
 import { CellClickEvent, CellPreparedEvent, ContentReadyEvent, ContextMenuPreparingEvent, DisposingEvent, ExportingEvent, InitializedEvent, OptionChangedEvent, PivotGridDataFieldArea, PivotGridRowHeaderLayout, PivotGridTotalDisplayMode } from 'devextreme/ui/pivot_grid';
-import PivotGridDataSource, { Options as PivotGridDataSourceOptions } from 'devextreme/ui/pivot_grid/data_source';
+import PivotGridDataSource, { PivotGridDataSourceOptions } from 'devextreme/ui/pivot_grid/data_source';
 
 import DxPivotGrid from 'devextreme/ui/pivot_grid';
 
@@ -143,10 +143,10 @@ export class DxPivotGridComponent extends DxComponent implements OnDestroy, OnCh
     
      */
     @Input()
-    get dataSource(): PivotGridDataSource | PivotGridDataSourceOptions | null | Array<any> {
+    get dataSource(): PivotGridDataSourceOptions | PivotGridDataSource | null | Array<any> {
         return this._getOption('dataSource');
     }
-    set dataSource(value: PivotGridDataSource | PivotGridDataSourceOptions | null | Array<any>) {
+    set dataSource(value: PivotGridDataSourceOptions | PivotGridDataSource | null | Array<any>) {
         this._setOption('dataSource', value);
     }
 
@@ -592,7 +592,7 @@ export class DxPivotGridComponent extends DxComponent implements OnDestroy, OnCh
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     
      */
-    @Output() dataSourceChange: EventEmitter<PivotGridDataSource | PivotGridDataSourceOptions | null | Array<any>>;
+    @Output() dataSourceChange: EventEmitter<PivotGridDataSourceOptions | PivotGridDataSource | null | Array<any>>;
 
     /**
     

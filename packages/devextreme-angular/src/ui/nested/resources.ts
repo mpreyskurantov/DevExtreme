@@ -14,8 +14,8 @@ import {
 
 
 
-import { Store } from 'devextreme/data';
-import DataSource, { Options as DataSourceOptions } from 'devextreme/data/data_source';
+import DataSource, { DataSourceOptions } from 'devextreme/data/data_source';
+import { Store } from 'devextreme/data/store';
 
 import {
     NestedOptionHost,
@@ -39,10 +39,10 @@ export class DxoResourcesComponent extends NestedOption implements OnDestroy, On
     }
 
     @Input()
-    get dataSource(): DataSource | DataSourceOptions | Store | null | string | Array<any> {
+    get dataSource(): Store | DataSourceOptions | DataSource | null | string | Array<any> {
         return this._getOption('dataSource');
     }
-    set dataSource(value: DataSource | DataSourceOptions | Store | null | string | Array<any>) {
+    set dataSource(value: Store | DataSourceOptions | DataSource | null | string | Array<any>) {
         this._setOption('dataSource', value);
     }
 

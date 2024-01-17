@@ -24,11 +24,10 @@ import {
 
 export { ExplicitTypes } from 'devextreme/ui/list';
 
-import DevExpress from 'devextreme/bundles/dx.all';
 import { PageLoadMode, ScrollbarMode, SearchMode, SelectAllMode, SingleMultipleAllOrNone } from 'devextreme/common';
-import { Store } from 'devextreme/data';
-import DataSource, { Options as DataSourceOptions } from 'devextreme/data/data_source';
-import { ContentReadyEvent, DisposingEvent, GroupRenderedEvent, InitializedEvent, ItemClickEvent, ItemContextMenuEvent, ItemDeletedEvent, ItemDeleteMode, ItemDeletingEvent, ItemHoldEvent, ItemRenderedEvent, ItemReorderedEvent, ItemSwipeEvent, ListMenuMode, OptionChangedEvent, PageLoadingEvent, PullRefreshEvent, ScrollEvent, SelectAllValueChangedEvent, SelectionChangedEvent } from 'devextreme/ui/list';
+import DataSource, { DataSourceOptions } from 'devextreme/data/data_source';
+import { Store } from 'devextreme/data/store';
+import { ContentReadyEvent, DisposingEvent, dxListItem, GroupRenderedEvent, InitializedEvent, ItemClickEvent, ItemContextMenuEvent, ItemDeletedEvent, ItemDeleteMode, ItemDeletingEvent, ItemHoldEvent, ItemRenderedEvent, ItemReorderedEvent, ItemSwipeEvent, ListMenuMode, OptionChangedEvent, PageLoadingEvent, PullRefreshEvent, ScrollEvent, SelectAllValueChangedEvent, SelectionChangedEvent } from 'devextreme/ui/list';
 import { dxSortableOptions } from 'devextreme/ui/sortable';
 import { Properties as dxTextBoxOptions } from 'devextreme/ui/text_box';
 
@@ -145,10 +144,10 @@ export class DxListComponent<TItem = any, TKey = any> extends DxComponent implem
     
      */
     @Input()
-    get dataSource(): DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxListItem | any> {
+    get dataSource(): Store | DataSourceOptions | DataSource | null | string | Array<dxListItem | string | any> {
         return this._getOption('dataSource');
     }
-    set dataSource(value: DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxListItem | any>) {
+    set dataSource(value: Store | DataSourceOptions | DataSource | null | string | Array<dxListItem | string | any>) {
         this._setOption('dataSource', value);
     }
 
@@ -973,7 +972,7 @@ export class DxListComponent<TItem = any, TKey = any> extends DxComponent implem
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     
      */
-    @Output() dataSourceChange: EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxListItem | any>>;
+    @Output() dataSourceChange: EventEmitter<Store | DataSourceOptions | DataSource | null | string | Array<dxListItem | string | any>>;
 
     /**
     
