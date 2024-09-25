@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ng-packagr": "12.2.7"
+    "ng-packagr": "18.0.0"
   }
 }
