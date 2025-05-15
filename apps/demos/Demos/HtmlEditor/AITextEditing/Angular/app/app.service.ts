@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AICommand, AICommandName } from 'devextreme/ui/html_editor';
+import { DxHtmlEditorTypes } from 'devextreme-angular/ui/html-editor';
 
 const AzureOpenAIConfig = {
     dangerouslyAllowBrowser: true,
@@ -9,7 +9,7 @@ const AzureOpenAIConfig = {
     apiKey: 'DEMO',
 };
 
-const commands: Array<AICommand | AICommandName> = [
+const commands: Array<DxHtmlEditorTypes.AICommand | DxHtmlEditorTypes.AICommandName> = [
     'summarize',
     'proofread',
     'expand',

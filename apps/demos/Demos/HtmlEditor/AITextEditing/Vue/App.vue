@@ -16,13 +16,15 @@
   </DxHtmlEditor>
 </template>
 <script setup lang="ts">
+import { AzureOpenAI, OpenAI } from 'openai';
+
 import {
   DxHtmlEditor,
-  DxToolbar,
   DxItem,
+  DxToolbar,
 } from 'devextreme-vue/html-editor';
 import { AIIntegration } from 'devextreme/common/ai-integration';
-import { AzureOpenAI, OpenAI } from 'openai';
+
 import { 
   markup,
   commands,

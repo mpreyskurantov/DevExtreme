@@ -1,13 +1,16 @@
 import { NgModule, Component, enableProdMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AzureOpenAI, OpenAI } from 'openai';
+
 import { DxHtmlEditorModule } from 'devextreme-angular';
 import {
     AIIntegration,
     RequestParams,
     Response,
 } from 'devextreme/common/ai-integration';
-import { AzureOpenAI, OpenAI } from 'openai';
+
 import { Service } from './app.service';
 
 if (!/localhost/.test(document.location.host)) {
