@@ -817,7 +817,7 @@ export type Editing<TCardData=unknown, TKey=unknown> = { // TODO: sync with impl
     /**
      * @docid dxCardViewEditing.popup
      * @public
-     * @type object
+     * @type dxPopupOptions
      */
     popup?: PopupProperties;
 };
@@ -1462,7 +1462,7 @@ export interface dxCardViewOptions<TCardData = unknown, TKey = unknown> extends 
     /**
      * @docid
      * @public
-     * @type object
+     * @type dxPopupOptions
      */
     filterBuilderPopup?: PopupProperties;
     /**
@@ -1882,11 +1882,11 @@ export default class dxCardView<TCardData = unknown, TKey = unknown> extends Wid
 // plus, some of these types are already exported with direct declarations
 
 export {
+    FormProperties,
+    PopupProperties,
     Sorting,
     Pager,
     DataErrorOccurredInfo,
-    PopupProperties,
-    FormProperties,
     ColumnChooser,
     SearchPanel,
     HeaderFilter,
