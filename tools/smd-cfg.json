@@ -52,6 +52,20 @@
         },
         {
             "kind": "add",
+            "uid": "ui/scheduler:ToolbarItem\\.name",
+            "types": [
+                {
+                    "kind": "memberRef",
+                    "uid": "ui/scheduler:SchedulerPredefinedToolbarItem"
+                },
+                {
+                    "kind": "string",
+                    "name": "String"
+                }
+            ]
+        },
+        {
+            "kind": "add",
             "uid": "ui/toolbar:dxToolbarItem.widget",
             "types": [
                 {
