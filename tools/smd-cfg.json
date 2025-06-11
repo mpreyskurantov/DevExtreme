@@ -21,7 +21,7 @@
         },
         {
             "kind": "remove",
-            "uid": "/scheduler:Toolbar"
+            "uid": "/scheduler:DateNavigatorItemProperties"
         },
         {
             "kind": "remove",
@@ -45,6 +45,10 @@
         {
             "kind": "remove",
             "uid": "ui/toolbar:dxToolbarItem\\.(widget|options)"
+        },
+        {
+            "kind": "remove",
+            "uid": "ui/scheduler:ToolbarItem\\.(name|options)"
         },
         {
             "kind": "add",
@@ -110,7 +114,6 @@
             "ui/multi_view:dxMultiViewItem",
             "ui/responsive_box:dxResponsiveBoxItem",
             "ui/scheduler:Appointment",
-            "ui/scheduler:ToolbarItem",
             "ui/splitter:dxSplitterItem",
             "ui/stepper:dxStepperItem",
             "ui/tab_panel:dxTabPanelItem",
