@@ -84,8 +84,8 @@ catalogs:
       specifier: 20.12.8
       version: 20.12.8
     devextreme-internal-tools:
-      specifier: 18.2.0
-      version: 18.2.0
+      specifier: 20.0.0
+      version: 20.0.0
     prettier:
       specifier: 3.5.3
       version: 3.5.3
@@ -138,7 +138,7 @@ importers:
         version: 6.0.2(@angular/compiler@19.2.8)(@angular/core@19.2.8(rxjs@7.8.1)(zone.js@0.15.0))(tslint@6.1.3(typescript@5.9.2))
       devextreme-internal-tools:
         specifier: catalog:tools
-        version: 18.2.0
+        version: 20.0.0
       devextreme-metadata:
         specifier: workspace:*
         version: link:packages/devextreme-metadata
@@ -1882,7 +1882,7 @@ importers:
         version: 20.12.8
       devextreme-internal-tools:
         specifier: catalog:tools
-        version: 18.2.0
+        version: 20.0.0
       prettier:
         specifier: catalog:tools
         version: 3.5.3
@@ -10193,8 +10193,8 @@ packages:
     resolution: {integrity: sha512-+HFrt1BAGomEEkKE0sQNH5OW8NaBt3iiSKYOFZ2Yi1+G0wJZzcvdMNxPMd3yI4c1M8X5WT+LUxjYCChv4FNlyA==}
     engines: {node: '>=8.3.0'}
 
-  devextreme-internal-tools@18.2.0:
-    resolution: {integrity: sha512-Su5AD43mR3Tg+AtL8R0MfAlt/yvHIHDC7yqrF2drdJwCjGdELKg+vwXwRrCbeBQiugrEIqym4l3O2JAM0ZWzyQ==}
+  devextreme-internal-tools@20.0.0:
+    resolution: {integrity: sha512-x1EbEQeopsmINgSgVaLKeb6IScx/45fqyqfpgCQtGiF0CTBXLkA2nYTZuu7XHbt3MiCR8znx3XVgqKzZ4+dgEA==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -31289,7 +31289,7 @@ snapshots:
       unzipper: 0.12.3
       uuid: 8.3.2
 
-  devextreme-internal-tools@18.2.0:
+  devextreme-internal-tools@20.0.0:
     dependencies:
       '@prettier/sync': 0.6.1(prettier@3.6.2)
       dot: 1.1.3
