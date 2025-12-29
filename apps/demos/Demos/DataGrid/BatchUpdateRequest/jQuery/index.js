@@ -1,6 +1,5 @@
 const BASE_PATH = 'http://localhost:5555';
-//const BASE_PATH = 'https://js.devexpress.com/Demos/NetCore';
-let csrf = null;
+// const BASE_PATH = 'https://js.devexpress.com/Demos/NetCore';
 
 $(() => {
   const URL = `${BASE_PATH}/api/DataGridBatchUpdateWebApi`;
@@ -9,8 +8,12 @@ $(() => {
     dataSource: DevExpress.data.AspNet.createStore({
       key: 'OrderID',
       loadUrl: `${URL}/Orders`,
-      onBeforeSend(method, ajaxOptions) {
-        ajaxOptions.xhrFields = { withCredentials: true };
+      async onBeforeSend(__method, ajaxOptions) {
+        const tokenData = await getAntiForgeryToken();
+        ajaxOptions.xhrFields = {
+          withCredentials: true,
+          headers: { [tokenData.headerName]: tokenData.token },
+        };
       },
     }),
     pager: {
@@ -30,12 +33,12 @@ $(() => {
 
       if (e.changes.length) {
         const changes = normalizeChanges(e.changes);
-        e.promise = sendBatchRequest(`${URL}/Batch`, changes,
-          { [csrf['headerName']]: csrf['token'] }).done(() => {
-          e.component.refresh(true).done(() => {
+        e.promise = getAntiForgeryToken()
+          .then((tokenData) => sendBatchRequest(`${URL}/Batch`, changes, { [tokenData.headerName]: tokenData.token }))
+          .then(() => e.component.refresh(true))
+          .then(() => {
             e.component.cancelEditData();
           });
-        });
       }
     },
     columns: [{
@@ -82,28 +85,33 @@ $(() => {
     });
   }
 
+  function getAntiForgeryToken() {
+    return $.ajax({
+      url: `${BASE_PATH}/api/Common/GetAntiForgeryToken`,
+      method: 'GET',
+      xhrFields: { withCredentials: true },
+      cache: false,
+    }).fail((xhr) => {
+      const error = xhr.responseJSON?.message || xhr.statusText || 'Unknown error';
+      throw new Error(`Failed to retrieve anti-forgery token: ${error}`);
+    });
+  }
+
   function sendBatchRequest(url, changes, headers) {
     const d = $.Deferred();
 
     $.ajax(url, {
       method: 'POST',
       data: JSON.stringify(changes),
-      headers: headers,
+      headers,
       cache: false,
       contentType: 'application/json',
       xhrFields: { withCredentials: true },
     }).done(d.resolve).fail((xhr) => {
-      d.reject(xhr.responseJSON ? xhr.responseJSON.Message : xhr.statusText);
+      const errorMessage = xhr.responseJSON?.Message || xhr.statusText || 'Unknown error';
+      d.reject(new Error(`Batch save failed: ${errorMessage}`));
     });
 
     return d.promise();
   }
 });
-
-(async () => {
-  const response = await fetch(`${BASE_PATH}/api/Common/GetAntiForgeryToken`, {
-    credentials: 'include'
-  });
-  const data = await response.text();
-  csrf = JSON.parse(data);
-})();
