@@ -4,12 +4,42 @@ const BASE_PATH = 'http://localhost:5555';
 $(() => {
   const URL = `${BASE_PATH}/api/DataGridBatchUpdateWebApi`;
 
+  function fetchAntiForgeryToken() {
+    return $.ajax({
+      url: `${BASE_PATH}/api/Common/GetAntiForgeryToken`,
+      method: 'GET',
+      xhrFields: { withCredentials: true },
+      cache: false,
+    }).fail((xhr) => {
+      const error = xhr.responseJSON?.message || xhr.statusText || 'Unknown error';
+      throw new Error(`Failed to retrieve anti-forgery token: ${error}`);
+    });
+  }
+
+  function getAntiForgeryTokenValue() {
+    const tokenMeta = document.querySelector('meta[name="csrf-token"]');
+    if (tokenMeta) {
+      const headerName = tokenMeta.dataset.headerName || 'RequestVerificationToken';
+      const token = tokenMeta.getAttribute('content');
+      return $.Deferred().resolve({ headerName, token });
+    }
+
+    return fetchAntiForgeryToken().then((tokenData) => {
+      const meta = document.createElement('meta');
+      meta.name = 'csrf-token';
+      meta.content = tokenData.token;
+      meta.dataset.headerName = tokenData.headerName;
+      document.head.appendChild(meta);
+      return tokenData;
+    });
+  }
+
   $('#gridContainer').dxDataGrid({
     dataSource: DevExpress.data.AspNet.createStore({
       key: 'OrderID',
       loadUrl: `${URL}/Orders`,
       async onBeforeSend(__method, ajaxOptions) {
-        const tokenData = await getAntiForgeryToken();
+        const tokenData = await getAntiForgeryTokenValue();
         ajaxOptions.xhrFields = {
           withCredentials: true,
           headers: { [tokenData.headerName]: tokenData.token },
@@ -33,8 +63,7 @@ $(() => {
 
       if (e.changes.length) {
         const changes = normalizeChanges(e.changes);
-        e.promise = getAntiForgeryToken()
-          .then((tokenData) => sendBatchRequest(`${URL}/Batch`, changes, { [tokenData.headerName]: tokenData.token }))
+        e.promise = getAntiForgeryTokenValue().then((tokenData) => sendBatchRequest(`${URL}/Batch`, changes, { [tokenData.headerName]: tokenData.token }))
           .then(() => e.component.refresh(true))
           .then(() => {
             e.component.cancelEditData();
@@ -82,18 +111,6 @@ $(() => {
         default:
           return c;
       }
-    });
-  }
-
-  function getAntiForgeryToken() {
-    return $.ajax({
-      url: `${BASE_PATH}/api/Common/GetAntiForgeryToken`,
-      method: 'GET',
-      xhrFields: { withCredentials: true },
-      cache: false,
-    }).fail((xhr) => {
-      const error = xhr.responseJSON?.message || xhr.statusText || 'Unknown error';
-      throw new Error(`Failed to retrieve anti-forgery token: ${error}`);
     });
   }
 
