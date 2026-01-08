@@ -29,9 +29,9 @@ async function fetchAntiForgeryToken(): Promise<{ headerName: string; token: str
 }
 
 async function getAntiForgeryTokenValue(): Promise<{ headerName: string; token: string }> {
-  const tokenMeta = document.querySelector('meta[name="csrf-token"]');
+  const tokenMeta = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]');
   if (tokenMeta) {
-    const headerName = (tokenMeta as HTMLMetaElement).dataset.headerName || 'RequestVerificationToken';
+    const headerName = tokenMeta.dataset.headerName || 'RequestVerificationToken';
     const token = tokenMeta.getAttribute('content') || '';
     return Promise.resolve({ headerName, token });
   }
