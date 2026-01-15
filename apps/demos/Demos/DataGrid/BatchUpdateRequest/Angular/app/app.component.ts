@@ -4,7 +4,7 @@ import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@ang
 import { lastValueFrom } from 'rxjs';
 import * as AspNetData from 'devextreme-aspnet-data-nojquery';
 import { DxDataGridComponent, DxDataGridModule, DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
-import { antiForgeryInterceptor, AntiForgeryTokenService } from './service/app.service';
+import { antiForgeryInterceptor, AntiForgeryTokenService } from './app.service';
 
 if (!/localhost/.test(document.location.host)) {
   enableProdMode();
