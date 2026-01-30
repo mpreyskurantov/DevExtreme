@@ -16,10 +16,9 @@ import {
 import { DOCUMENT } from '@angular/common';
 
 
-import dxDataGrid from 'devextreme/ui/data_grid';
-import { dxDataGridColumn, dxDataGridRowObject, DataGridPredefinedColumnButton, ColumnButtonClickEvent } from 'devextreme/ui/data_grid';
-import { TextEditorButtonLocation } from 'devextreme/common';
-import { dxButtonOptions } from 'devextreme/ui/button';
+import dxTreeList from 'devextreme/ui/tree_list';
+import { dxTreeListColumn, dxTreeListRowObject, TreeListPredefinedColumnButton } from 'devextreme/ui/tree_list';
+import { event } from 'devextreme/events/events.types';
 
 import {
     DxIntegrationModule,
@@ -34,7 +33,7 @@ import { CollectionNestedOption } from 'devextreme-angular/core';
 import { PROPERTY_TOKEN_buttons } from 'devextreme-angular/core/tokens';
 
 @Component({
-    selector: 'dxi-data-grid-button',
+    selector: 'dxi-tree-list-column-button',
     standalone: true,
     template: '<ng-content></ng-content>',
     styles: [':host { display: block; }'],
@@ -44,11 +43,11 @@ import { PROPERTY_TOKEN_buttons } from 'devextreme-angular/core/tokens';
         DxTemplateHost,
         {
            provide: PROPERTY_TOKEN_buttons,
-           useExisting: DxiDataGridButtonComponent,
+           useExisting: DxiTreeListColumnButtonComponent,
         }
     ]
 })
-export class DxiDataGridButtonComponent extends CollectionNestedOption implements AfterViewInit,
+export class DxiTreeListColumnButtonComponent extends CollectionNestedOption implements AfterViewInit,
     IDxTemplateHost {
     @Input()
     get cssClass(): string {
@@ -59,10 +58,10 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
     }
 
     @Input()
-    get disabled(): boolean | ((options: { column: dxDataGridColumn, component: dxDataGrid, row: dxDataGridRowObject }) => boolean) {
+    get disabled(): boolean | ((options: { column: dxTreeListColumn, component: dxTreeList, row: dxTreeListRowObject }) => boolean) {
         return this._getOption('disabled');
     }
-    set disabled(value: boolean | ((options: { column: dxDataGridColumn, component: dxDataGrid, row: dxDataGridRowObject }) => boolean)) {
+    set disabled(value: boolean | ((options: { column: dxTreeListColumn, component: dxTreeList, row: dxTreeListRowObject }) => boolean)) {
         this._setOption('disabled', value);
     }
 
@@ -83,18 +82,18 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
     }
 
     @Input()
-    get name(): DataGridPredefinedColumnButton | string | undefined {
+    get name(): string | TreeListPredefinedColumnButton {
         return this._getOption('name');
     }
-    set name(value: DataGridPredefinedColumnButton | string | undefined) {
+    set name(value: string | TreeListPredefinedColumnButton) {
         this._setOption('name', value);
     }
 
     @Input()
-    get onClick(): ((e: ColumnButtonClickEvent) => void) {
+    get onClick(): ((e: { column: dxTreeListColumn, component: dxTreeList, element: any, event: event, model: any, row: dxTreeListRowObject }) => void) {
         return this._getOption('onClick');
     }
-    set onClick(value: ((e: ColumnButtonClickEvent) => void)) {
+    set onClick(value: ((e: { column: dxTreeListColumn, component: dxTreeList, element: any, event: event, model: any, row: dxTreeListRowObject }) => void)) {
         this._setOption('onClick', value);
     }
 
@@ -115,27 +114,11 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
     }
 
     @Input()
-    get visible(): boolean | ((options: { column: dxDataGridColumn, component: dxDataGrid, row: dxDataGridRowObject }) => boolean) {
+    get visible(): boolean | ((options: { column: dxTreeListColumn, component: dxTreeList, row: dxTreeListRowObject }) => boolean) {
         return this._getOption('visible');
     }
-    set visible(value: boolean | ((options: { column: dxDataGridColumn, component: dxDataGrid, row: dxDataGridRowObject }) => boolean)) {
+    set visible(value: boolean | ((options: { column: dxTreeListColumn, component: dxTreeList, row: dxTreeListRowObject }) => boolean)) {
         this._setOption('visible', value);
-    }
-
-    @Input()
-    get location(): TextEditorButtonLocation {
-        return this._getOption('location');
-    }
-    set location(value: TextEditorButtonLocation) {
-        this._setOption('location', value);
-    }
-
-    @Input()
-    get options(): dxButtonOptions | undefined {
-        return this._getOption('options');
-    }
-    set options(value: dxButtonOptions | undefined) {
-        this._setOption('options', value);
     }
 
 
@@ -173,10 +156,10 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
 
 @NgModule({
   imports: [
-    DxiDataGridButtonComponent
+    DxiTreeListColumnButtonComponent
   ],
   exports: [
-    DxiDataGridButtonComponent
+    DxiTreeListColumnButtonComponent
   ],
 })
-export class DxiDataGridButtonModule { }
+export class DxiTreeListColumnButtonModule { }

@@ -18,8 +18,6 @@ import { DOCUMENT } from '@angular/common';
 
 import dxDataGrid from 'devextreme/ui/data_grid';
 import { dxDataGridColumn, dxDataGridRowObject, DataGridPredefinedColumnButton, ColumnButtonClickEvent } from 'devextreme/ui/data_grid';
-import { TextEditorButtonLocation } from 'devextreme/common';
-import { dxButtonOptions } from 'devextreme/ui/button';
 
 import {
     DxIntegrationModule,
@@ -34,7 +32,7 @@ import { CollectionNestedOption } from 'devextreme-angular/core';
 import { PROPERTY_TOKEN_buttons } from 'devextreme-angular/core/tokens';
 
 @Component({
-    selector: 'dxi-data-grid-button',
+    selector: 'dxi-data-grid-column-button',
     standalone: true,
     template: '<ng-content></ng-content>',
     styles: [':host { display: block; }'],
@@ -44,11 +42,11 @@ import { PROPERTY_TOKEN_buttons } from 'devextreme-angular/core/tokens';
         DxTemplateHost,
         {
            provide: PROPERTY_TOKEN_buttons,
-           useExisting: DxiDataGridButtonComponent,
+           useExisting: DxiDataGridColumnButtonComponent,
         }
     ]
 })
-export class DxiDataGridButtonComponent extends CollectionNestedOption implements AfterViewInit,
+export class DxiDataGridColumnButtonComponent extends CollectionNestedOption implements AfterViewInit,
     IDxTemplateHost {
     @Input()
     get cssClass(): string {
@@ -83,10 +81,10 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
     }
 
     @Input()
-    get name(): DataGridPredefinedColumnButton | string | undefined {
+    get name(): DataGridPredefinedColumnButton | string {
         return this._getOption('name');
     }
-    set name(value: DataGridPredefinedColumnButton | string | undefined) {
+    set name(value: DataGridPredefinedColumnButton | string) {
         this._setOption('name', value);
     }
 
@@ -120,22 +118,6 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
     }
     set visible(value: boolean | ((options: { column: dxDataGridColumn, component: dxDataGrid, row: dxDataGridRowObject }) => boolean)) {
         this._setOption('visible', value);
-    }
-
-    @Input()
-    get location(): TextEditorButtonLocation {
-        return this._getOption('location');
-    }
-    set location(value: TextEditorButtonLocation) {
-        this._setOption('location', value);
-    }
-
-    @Input()
-    get options(): dxButtonOptions | undefined {
-        return this._getOption('options');
-    }
-    set options(value: dxButtonOptions | undefined) {
-        this._setOption('options', value);
     }
 
 
@@ -173,10 +155,10 @@ export class DxiDataGridButtonComponent extends CollectionNestedOption implement
 
 @NgModule({
   imports: [
-    DxiDataGridButtonComponent
+    DxiDataGridColumnButtonComponent
   ],
   exports: [
-    DxiDataGridButtonComponent
+    DxiDataGridColumnButtonComponent
   ],
 })
-export class DxiDataGridButtonModule { }
+export class DxiDataGridColumnButtonModule { }

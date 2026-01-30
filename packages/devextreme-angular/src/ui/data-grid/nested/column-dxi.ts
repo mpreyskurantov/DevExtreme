@@ -17,9 +17,9 @@ import {
 
 
 import * as CommonTypes from 'devextreme/common';
+import { ColumnAIOptions, FilterOperation, FilterType, FixedPosition, ColumnHeaderFilter, SelectedFilterOperation } from 'devextreme/common/grids';
 import { HorizontalAlignment, DataType, SortOrder } from 'devextreme/common';
 import { DataGridPredefinedColumnButton, dxDataGridColumnButton, dxDataGridColumn, DataGridCommandColumnType } from 'devextreme/ui/data_grid';
-import { FilterOperation, FilterType, FixedPosition, ColumnHeaderFilter, SelectedFilterOperation } from 'devextreme/common/grids';
 import { Format } from 'devextreme/common/core/localization';
 import { dxFormSimpleItem } from 'devextreme/ui/form';
 import { DataSourceOptions } from 'devextreme/data/data_source';
@@ -67,6 +67,14 @@ export class DxiDataGridColumnComponent extends CollectionNestedOption {
         this.setChildren('columns', value);
     }
     
+    @Input()
+    get ai(): ColumnAIOptions {
+        return this._getOption('ai');
+    }
+    set ai(value: ColumnAIOptions) {
+        this._setOption('ai', value);
+    }
+
     @Input()
     get alignment(): HorizontalAlignment | undefined {
         return this._getOption('alignment');
