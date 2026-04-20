@@ -6,6 +6,7 @@ import {
 import {
   template,
   FirstDayOfWeek,
+  DayOfWeek,
   Orientation,
   ScrollMode,
   ToolbarItemLocation,
@@ -67,6 +68,7 @@ export interface TargetedAppointmentInfo {
 
 export {
     FirstDayOfWeek,
+    DayOfWeek,
     Orientation,
     ScrollMode,
 };
@@ -81,8 +83,6 @@ export type SnapToCellsMode = 'always' | 'auto' | 'never';
 export type RecurrenceEditMode = 'dialog' | 'occurrence' | 'series';
 /** @public */
 export type AppointmentFormIconsShowMode = 'both' | 'main' | 'recurrence' | 'none';
-/** @public */
-export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 /**
  * @docid
