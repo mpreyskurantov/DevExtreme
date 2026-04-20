@@ -1,5 +1,4 @@
 export {
-  FirstDayOfWeek,
   DayOfWeek,
   Orientation,
   ScrollMode,

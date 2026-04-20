@@ -46,7 +46,6 @@ import {
  Store,
 } from "devextreme/data/store";
 import {
- FirstDayOfWeek,
  DayOfWeek,
  ValidationRuleType,
  HorizontalAlignment,
@@ -150,6 +149,7 @@ type AccessibleOptions = Pick<Properties,
   "dataSource" |
   "dateCellTemplate" |
   "dateSerializationFormat" |
+  "DayOfWeek" |
   "descriptionExpr" |
   "disabled" |
   "editing" |
@@ -157,7 +157,6 @@ type AccessibleOptions = Pick<Properties,
   "endDateExpr" |
   "endDateTimeZoneExpr" |
   "endDayHour" |
-  "firstDayOfWeek" |
   "focusStateEnabled" |
   "groupByDate" |
   "groups" |
@@ -238,6 +237,7 @@ const componentConfig = {
     dataSource: [Array, Object, String] as PropType<Array<dxSchedulerAppointment> | DataSource | DataSourceOptions | null | Store | string | Record<string, any>>,
     dateCellTemplate: {},
     dateSerializationFormat: String,
+    DayOfWeek: Number as PropType<DayOfWeek>,
     descriptionExpr: String,
     disabled: Boolean,
     editing: [Boolean, Object] as PropType<boolean | Record<string, any>>,
@@ -245,7 +245,6 @@ const componentConfig = {
     endDateExpr: String,
     endDateTimeZoneExpr: String,
     endDayHour: Number,
-    firstDayOfWeek: Number as PropType<FirstDayOfWeek>,
     focusStateEnabled: Boolean,
     groupByDate: Boolean,
     groups: Array as PropType<Array<string>>,
@@ -322,6 +321,7 @@ const componentConfig = {
     "update:dataSource": null,
     "update:dateCellTemplate": null,
     "update:dateSerializationFormat": null,
+    "update:DayOfWeek": null,
     "update:descriptionExpr": null,
     "update:disabled": null,
     "update:editing": null,
@@ -329,7 +329,6 @@ const componentConfig = {
     "update:endDateExpr": null,
     "update:endDateTimeZoneExpr": null,
     "update:endDayHour": null,
-    "update:firstDayOfWeek": null,
     "update:focusStateEnabled": null,
     "update:groupByDate": null,
     "update:groups": null,
@@ -1801,7 +1800,7 @@ const DxViewConfig = {
     dataCellTemplate: {},
     dateCellTemplate: {},
     endDayHour: Number,
-    firstDayOfWeek: Number as PropType<FirstDayOfWeek>,
+    firstDayOfWeek: Number as PropType<DayOfWeek>,
     groupByDate: Boolean,
     groupOrientation: String as PropType<Orientation>,
     groups: Array as PropType<Array<string>>,

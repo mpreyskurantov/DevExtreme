@@ -779,6 +779,10 @@ declare module DevExpress {
      */
     shadingColor?: string;
   }
+  /**
+   * @deprecated Use the DevExpress.common.DayOfWeek type instead
+   */
+  export type FirstDayOfWeek = DevExpress.common.DayOfWeek;
   export type FloatingActionButtonDirection = 'auto' | 'up' | 'down';
   /**
    * [descr:registerComponent(name, componentClass)]
@@ -1296,7 +1300,6 @@ declare module DevExpress.common {
    */
   type ExternalFormat = Intl.DateTimeFormatOptions | Intl.NumberFormatOptions;
   export type FieldChooserLayout = 0 | 1 | 2;
-  export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
   export type Format =
     | 'billions'
     | 'currency'
@@ -10120,7 +10123,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxCalendarOptions.firstDayOfWeek]
      */
-    firstDayOfWeek?: DevExpress.common.FirstDayOfWeek | undefined;
+    firstDayOfWeek?: DevExpress.common.DayOfWeek | undefined;
     /**
      * [descr:dxCalendarOptions.focusStateEnabled]
      */
@@ -20982,7 +20985,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxGanttOptions.firstDayOfWeek]
      */
-    firstDayOfWeek?: DevExpress.common.FirstDayOfWeek | undefined;
+    firstDayOfWeek?: DevExpress.common.DayOfWeek | undefined;
     /**
      * [descr:dxGanttOptions.tasks]
      */
@@ -26586,9 +26589,9 @@ declare module DevExpress.ui {
      */
     endDayHour?: number;
     /**
-     * [descr:dxSchedulerOptions.firstDayOfWeek]
+     * [descr:dxSchedulerOptions.DayOfWeek]
      */
-    firstDayOfWeek?: DevExpress.common.FirstDayOfWeek | undefined;
+    DayOfWeek?: DevExpress.common.DayOfWeek | undefined;
     /**
      * [descr:dxSchedulerOptions.hiddenWeekDays]
      */
@@ -26923,7 +26926,7 @@ declare module DevExpress.ui {
           /**
            * [descr:dxSchedulerOptions.views.firstDayOfWeek]
            */
-          firstDayOfWeek?: DevExpress.common.FirstDayOfWeek | undefined;
+          firstDayOfWeek?: DevExpress.common.DayOfWeek | undefined;
           /**
            * [descr:dxSchedulerOptions.views.hiddenWeekDays]
            */
