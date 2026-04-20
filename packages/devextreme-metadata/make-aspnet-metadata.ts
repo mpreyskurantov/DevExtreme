@@ -160,6 +160,17 @@ AspNet.makeMetadata({
       ['any[]'],
     ),
 
+    /*
+    replaceTypes(
+      [
+        'ui/scheduler:dxSchedulerOptions.hiddenWeekDays',
+        'ui/scheduler:dxSchedulerOptions.views.hiddenWeekDays',
+      ],
+      ['*'],
+      ['int'],
+    ),
+    */
+
     ...replaceTypesMutations,
 
     [
