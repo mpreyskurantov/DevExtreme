@@ -1261,6 +1261,7 @@ declare module DevExpress.common {
     | 'object'
     | 'datetime';
   export type DateLike = Date | number | string | null;
+  export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
   export type Direction = 'bottom' | 'left' | 'right' | 'top';
   export type DisplayMode = 'adaptive' | 'compact' | 'full';
   export type DragDirection = 'both' | 'horizontal' | 'vertical';
@@ -26253,7 +26254,6 @@ declare module DevExpress.ui {
       readonly endDate: Date;
       readonly text: string;
     };
-    export type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
     /**
      * [descr:_ui_scheduler_DisposingEvent]
      */
@@ -26592,7 +26592,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxSchedulerOptions.hiddenWeekDays]
      */
-    hiddenWeekDays?: Array<DevExpress.ui.dxScheduler.DayOfWeek>;
+    hiddenWeekDays?: Array<DevExpress.common.DayOfWeek>;
     /**
      * [descr:dxSchedulerOptions.focusStateEnabled]
      */
@@ -26927,7 +26927,7 @@ declare module DevExpress.ui {
           /**
            * [descr:dxSchedulerOptions.views.hiddenWeekDays]
            */
-          hiddenWeekDays?: Array<DevExpress.ui.dxScheduler.DayOfWeek>;
+          hiddenWeekDays?: Array<DevExpress.common.DayOfWeek>;
           /**
            * [descr:dxSchedulerOptions.views.groupByDate]
            */

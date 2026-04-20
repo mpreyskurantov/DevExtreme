@@ -24,11 +24,11 @@ import {
 
 import type dxSortable from 'devextreme/ui/sortable';
 import type dxDraggable from 'devextreme/ui/draggable';
-import type { default as dxScheduler, AllDayPanelMode, ViewType, dxSchedulerAppointment, AppointmentFormProperties, DayOfWeek, CellAppointmentsLimit, AppointmentAddedEvent, AppointmentAddingEvent, AppointmentClickEvent, AppointmentContextMenuEvent, AppointmentDblClickEvent, AppointmentDeletedEvent, AppointmentDeletingEvent, AppointmentFormOpeningEvent, AppointmentRenderedEvent, AppointmentTooltipShowingEvent, AppointmentUpdatedEvent, AppointmentUpdatingEvent, CellClickEvent, CellContextMenuEvent, ContentReadyEvent, DisposingEvent, InitializedEvent, OptionChangedEvent, RecurrenceEditMode, dxSchedulerScrolling, SnapToCellsMode, dxSchedulerToolbar } from 'devextreme/ui/scheduler';
+import type { default as dxScheduler, AllDayPanelMode, ViewType, dxSchedulerAppointment, AppointmentFormProperties, CellAppointmentsLimit, AppointmentAddedEvent, AppointmentAddingEvent, AppointmentClickEvent, AppointmentContextMenuEvent, AppointmentDblClickEvent, AppointmentDeletedEvent, AppointmentDeletingEvent, AppointmentFormOpeningEvent, AppointmentRenderedEvent, AppointmentTooltipShowingEvent, AppointmentUpdatedEvent, AppointmentUpdatingEvent, CellClickEvent, CellContextMenuEvent, ContentReadyEvent, DisposingEvent, InitializedEvent, OptionChangedEvent, RecurrenceEditMode, dxSchedulerScrolling, SnapToCellsMode, dxSchedulerToolbar } from 'devextreme/ui/scheduler';
 import type { event } from 'devextreme/events/events.types';
 import type { default as DataSource, DataSourceOptions } from 'devextreme/data/data_source';
 import type { Store } from 'devextreme/data/store';
-import type { FirstDayOfWeek, Orientation } from 'devextreme/common';
+import type { FirstDayOfWeek, DayOfWeek, Orientation } from 'devextreme/common';
 
 import DxScheduler from 'devextreme/ui/scheduler';
 

@@ -10,7 +10,6 @@ import {
  AllDayPanelMode,
  ViewType,
  dxSchedulerAppointment,
- DayOfWeek,
  CellAppointmentsLimit,
  AppointmentAddedEvent,
  AppointmentAddingEvent,
@@ -48,6 +47,7 @@ import {
 } from "devextreme/data/store";
 import {
  FirstDayOfWeek,
+ DayOfWeek,
  ValidationRuleType,
  HorizontalAlignment,
  VerticalAlignment,
