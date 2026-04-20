@@ -5,7 +5,6 @@ import {
 
 import {
   template,
-  FirstDayOfWeek,
   DayOfWeek,
   Orientation,
   ScrollMode,
@@ -67,7 +66,6 @@ export interface TargetedAppointmentInfo {
 }
 
 export {
-    FirstDayOfWeek,
     DayOfWeek,
     Orientation,
     ScrollMode,
@@ -686,7 +684,7 @@ export interface dxSchedulerOptions extends WidgetOptions<dxScheduler> {
      * @default undefined
      * @public
      */
-    firstDayOfWeek?: FirstDayOfWeek | undefined;
+    DayOfWeek?: DayOfWeek | undefined;
     /**
      * @docid
      * @default undefined
@@ -1094,7 +1092,7 @@ export interface dxSchedulerOptions extends WidgetOptions<dxScheduler> {
        * @docid
        * @default undefined
        */
-      firstDayOfWeek?: FirstDayOfWeek | undefined;
+      firstDayOfWeek?: DayOfWeek | undefined;
       /**
        * @docid
        * @default undefined

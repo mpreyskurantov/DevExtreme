@@ -260,9 +260,9 @@ export type FieldChooserLayout = 0 | 1 | 2;
 
 /**
  * @public
- * @namespace DevExpress.common
+ * @deprecated Use the DayOfWeek type instead
  */
-export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type FirstDayOfWeek = DayOfWeek;
 
 /**
  * @public
