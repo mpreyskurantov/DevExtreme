@@ -3,7 +3,7 @@ import {
 } from '@jest/globals';
 import type { Message } from '@js/ui/chat';
 
-import { AI_ASSISTANT_AUTHOR_ID, MessageStatus } from '../const';
+import { AI_ASSISTANT_AUTHOR_ID } from '../const';
 import type { JsonSchema } from '../types';
 import {
   expandTypeArraysToAnyOf,
@@ -224,7 +224,7 @@ describe('getMessageStatus', () => {
       { status: 'success' as const, message: 'Filtered' },
     ];
 
-    expect(getMessageStatus(commands)).toBe(MessageStatus.Success);
+    expect(getMessageStatus(commands)).toBe('success');
   });
 
   it('should return Failure when commands contain errors', () => {
@@ -233,7 +233,7 @@ describe('getMessageStatus', () => {
       { status: 'failure' as const, message: 'Failed to filter' },
     ];
 
-    expect(getMessageStatus(commands)).toBe(MessageStatus.Failure);
+    expect(getMessageStatus(commands)).toBe('failure');
   });
 
   it('should return Failure when commands contain aborted items', () => {
@@ -242,7 +242,7 @@ describe('getMessageStatus', () => {
       { status: 'aborted' as const, message: 'Filter was aborted' },
     ];
 
-    expect(getMessageStatus(commands)).toBe(MessageStatus.Failure);
+    expect(getMessageStatus(commands)).toBe('failure');
   });
 
   it('should return Failure when commands contain both errors and aborted items', () => {
@@ -251,11 +251,11 @@ describe('getMessageStatus', () => {
       { status: 'aborted' as const, message: 'Aborted' },
     ];
 
-    expect(getMessageStatus(commands)).toBe(MessageStatus.Failure);
+    expect(getMessageStatus(commands)).toBe('failure');
   });
 
   it('should return Success when commands array is empty', () => {
-    expect(getMessageStatus([])).toBe(MessageStatus.Success);
+    expect(getMessageStatus([])).toBe('success');
   });
 });
 
