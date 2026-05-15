@@ -1,6 +1,4 @@
-import {
-  describe, expect, it,
-} from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import type { Message } from '@js/ui/chat';
 
 import { AI_ASSISTANT_AUTHOR_ID } from '../const';
