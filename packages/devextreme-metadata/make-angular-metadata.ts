@@ -46,6 +46,8 @@ Ng.makeMetadata({
 
     ...replaceTypesMutations,
 
+    replaceTypes(/\.dashStyle/, ['*'], [types.uidRef('common/charts:DashStyle')]),
+
     removeMembers(/\/grids:ColumnBase.ai/),
     removeMembers(/\/grids:GridBaseOptions.aiAssistant/),
     removeMembers(/\/grids:AIAssistant/),

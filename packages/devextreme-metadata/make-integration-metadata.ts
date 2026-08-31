@@ -1,5 +1,5 @@
 import { Imd, addMetadata, replaceTypes, removeMembers } from 'devextreme-internal-tools/metadata';
-import { cleanArtifacts } from './common';
+import { cleanArtifacts, types } from './common';
 import { IMD_FILE, PATHS } from './common/paths';
 
 cleanArtifacts(IMD_FILE, 'IntegrationDataGenerator.cfg.json');
@@ -116,5 +116,7 @@ Imd.makeMetadata({
     replaceTypes(/.+/, ['core/element:UserDefinedElement'], ['any']),
 
     removeMembers(['core/element:DxElement', 'core/element:UserDefinedElement'], 'any'),
+
+    replaceTypes(/\.dashStyle/, ['*'], [types.uidRef('common/charts:DashStyle')]),
   ],
 });

@@ -162,6 +162,8 @@ AspNet.makeMetadata({
 
     ...replaceTypesMutations,
 
+    replaceTypes(/\.dashStyle/, ['*'], ['string']),
+
     [
       ['ui/box:dxBoxOptions', 'ui/box:dxBoxItem.box'],
       ['ui/button:dxButtonOptions', 'common:TextEditorButton.options'],
