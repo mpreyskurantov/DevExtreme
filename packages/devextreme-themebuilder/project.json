@@ -19,7 +19,7 @@
         "{workspaceRoot}/packages/devextreme/build/**/*",
         "{workspaceRoot}/packages/devextreme/package.json",
         "{workspaceRoot}/packages/devextreme-scss/build/**/*",
-        "{workspaceRoot}/packages/devextreme-scss/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{workspaceRoot}/packages/devextreme-scss/icons/**/*",
         "{workspaceRoot}/packages/devextreme-scss/images/**/*",
         "{workspaceRoot}/packages/devextreme-scss/scss/**/*",

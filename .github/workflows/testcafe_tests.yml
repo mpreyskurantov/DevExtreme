@@ -36,7 +36,7 @@ jobs:
               - 'packages/devextreme-scss/scss/**'
               - 'packages/devextreme-scss/icons/**'
               - 'packages/devextreme-scss/images/**'
-              - 'packages/devextreme-scss/fonts/**'
+              - 'packages/devextreme-scss-fonts/fonts/**'
               - 'packages/devextreme/js/**/themes/**'
               - 'e2e/testcafe-devextreme/helpers/accessibility/**'
 

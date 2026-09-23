@@ -32,7 +32,7 @@ describe('ScssAssembleExecutor E2E', () => {
     );
 
     fs.mkdirSync(path.join(scssPackageDir, 'scss'), { recursive: true });
-    fs.mkdirSync(path.join(scssPackageDir, 'fonts'), { recursive: true });
+    fs.mkdirSync(path.join(scssPackageDir, '../devextreme-scss-fonts/fonts'), { recursive: true });
     fs.mkdirSync(path.join(scssPackageDir, 'icons', 'material'), { recursive: true });
   });
 
@@ -42,7 +42,7 @@ describe('ScssAssembleExecutor E2E', () => {
 
   it('should copy fonts and icons preserving directory structure under widgets/', async () => {
     fs.writeFileSync(
-      path.join(scssPackageDir, 'fonts', 'dx-font.woff'),
+      path.join(scssPackageDir, '../devextreme-scss-fonts/fonts', 'dx-font.woff'),
       Buffer.from([0x00, 0x01, 0x00, 0x00]),
     );
     fs.writeFileSync(path.join(scssPackageDir, 'icons', 'material', 'icon.svg'), SVG_CONTENT);

@@ -62,7 +62,7 @@ async function copyScssWithInlineDataUri(
 
 async function copyFonts(scssPackagePath: string, outputDir: string): Promise<void> {
   await copyDirectory(
-    path.join(scssPackagePath, 'fonts'),
+    path.resolve(scssPackagePath, '../devextreme-scss-fonts/fonts'),
     path.join(outputDir, 'widgets/material/typography/fonts'),
   );
 }

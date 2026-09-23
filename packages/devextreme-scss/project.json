@@ -31,7 +31,7 @@
       "options": {
         "files": [
           {
-            "from": "./fonts/**/*",
+            "from": "../devextreme-scss-fonts/fonts/**/*",
             "to": "../devextreme/artifacts/css/fonts"
           },
           {
@@ -52,7 +52,7 @@
       },
       "inputs": [
         "{projectRoot}/build/**/*",
-        "{projectRoot}/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{projectRoot}/icons/**/*",
         "{projectRoot}/images/**/*",
         "{projectRoot}/scss/**/*",
@@ -72,7 +72,7 @@
       },
       "inputs": [
         "{projectRoot}/build/**/*",
-        "{projectRoot}/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{projectRoot}/icons/**/*",
         "{projectRoot}/images/**/*",
         "{projectRoot}/scss/**/*",
@@ -97,7 +97,7 @@
       },
       "inputs": [
         "{projectRoot}/build/**/*",
-        "{projectRoot}/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{projectRoot}/icons/**/*",
         "{projectRoot}/images/**/*",
         "{projectRoot}/scss/**/*",
@@ -123,7 +123,7 @@
       },
       "inputs": [
         "{projectRoot}/build/**/*",
-        "{projectRoot}/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{projectRoot}/icons/**/*",
         "{projectRoot}/images/**/*",
         "{projectRoot}/scss/**/*",
@@ -147,7 +147,7 @@
       },
       "inputs": [
         "{projectRoot}/build/**/*",
-        "{projectRoot}/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{projectRoot}/icons/**/*",
         "{projectRoot}/images/**/*",
         "{projectRoot}/scss/**/*"

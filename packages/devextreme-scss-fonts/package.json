@@ -1,0 +1,8 @@
+{
+  "name": "devextreme-scss-fonts",
+  "version": "26.2.0",
+  "private": true,
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "Embedded font assets for DevExtreme themes"
+}

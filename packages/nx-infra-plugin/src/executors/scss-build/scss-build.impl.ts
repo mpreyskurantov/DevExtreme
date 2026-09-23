@@ -205,7 +205,7 @@ async function compileFile(
 }
 
 async function copyThemeAssets(projectRoot: string, cssOutputDir: string): Promise<void> {
-  const fontsFrom = path.resolve(projectRoot, 'fonts');
+  const fontsFrom = path.resolve(projectRoot, '../devextreme-scss-fonts/fonts');
   const iconsFrom = path.resolve(projectRoot, 'icons');
   const fontsTo = path.resolve(cssOutputDir, 'fonts');
   const iconsTo = path.resolve(cssOutputDir, 'icons');

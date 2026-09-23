@@ -1248,7 +1248,7 @@
       },
       "inputs": [
         "{workspaceRoot}/packages/devextreme-scss/scss/**/*",
-        "{workspaceRoot}/packages/devextreme-scss/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{workspaceRoot}/packages/devextreme-scss/icons/**/*"
       ],
       "outputs": [
@@ -1553,7 +1553,7 @@
         "devextremeDistMeta",
         "{workspaceRoot}/packages/devextreme-dist/package.json",
         "{workspaceRoot}/packages/devextreme-scss/scss/**/*",
-        "{workspaceRoot}/packages/devextreme-scss/fonts/**/*",
+        "{workspaceRoot}/packages/devextreme-scss-fonts/fonts/**/*",
         "{workspaceRoot}/packages/devextreme-scss/icons/**/*",
         "{workspaceRoot}/README.md",
         "{projectRoot}/artifacts/transpiled-esm-npm/**/*",
