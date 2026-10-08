@@ -42,7 +42,7 @@
         :value="80"
         :width="2"
         color="#fc3535"
-        dash-style="dash"
+        :dash-style="dashStyleVar"
       >
         <DxLabel :visible="false"/>
       </DxConstantLine>
@@ -71,6 +71,7 @@ import DxChart, {
   DxValueAxis,
   DxConstantLine,
 } from 'devextreme-vue/chart';
+import type { DashStyle } from 'devextreme-vue/common/charts';
 import { complaintsData } from './data.ts';
 
 function customizeTooltip(pointInfo: Record<string, any>) {
@@ -88,6 +89,8 @@ function customizeTooltip(pointInfo: Record<string, any>) {
     }</span>% </div></div></div>`,
   };
 }
+
+const dashStyleVar: DashStyle = "dashdotdotdotdot";
 
 const customizePercentageText = ({ valueText }: { valueText: string }) => `${valueText}%`;
 const data = complaintsData.sort((a, b) => b.count - a.count);

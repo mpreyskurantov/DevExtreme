@@ -64,7 +64,7 @@ $(() => {
       constantLines: [{
         value: 80,
         color: '#fc3535',
-        dashStyle: 'dash',
+        dashStyle: 'dashdotdash',
         width: 2,
         label: { visible: false },
       }],

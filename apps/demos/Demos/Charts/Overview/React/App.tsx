@@ -80,7 +80,7 @@ function App() {
         valueMarginsEnabled={false}
       >
         <Label customizeText={customizePercentageText} />
-        <ConstantLine value={80} width={2} color="#fc3535" dashStyle="dash">
+        <ConstantLine value={80} width={2} color="#fc3535" dashStyle="longDashdotdotdot">
           <Label visible={false} />
         </ConstantLine>
       </ValueAxis>
